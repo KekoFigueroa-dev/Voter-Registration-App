@@ -19,7 +19,7 @@ valid_parties = ["Republican", "Democratic", "Independent", "Libertarian", "Gree
 #Voter Options and rejection msg
 while True:
     if voter_age >= 18:
-        print(f"Congratulations {voter_name.title()}! You are old enough to vote.")
+        print(f"Congratulations {voter_name.title()}! You are old enough to register vote.")
         print("\nHere is a list of political parties to join")
         print("\n\t- Republican")
         print("\n\t- Democrat")
@@ -32,11 +32,24 @@ while True:
         exit()
 
 #party_choice input
-#while True:
-    #party_choice = input(str("What party would you like to Join? "))
+while True:
+    party_choice = input(str("What party would you like to Join? "))
+    if party_choice.title() in valid_parties:
+        break
+    else:
+        print("Please type a valid party name: (Republican, Democrat, Independent, Libertarian, Green) ")
+        continue
 
      
-        
+#Success Join Message 
+
+if party_choice.title() in ["Democrat", "Republican"]:
+    print(f"Congratulations {voter_name.title()} you have joined the {party_choice.title()} party!")
+    print("That is a major party")
+else:
+    print(f"The {party_choice} party is not a major party")
+
+print("\nThank you for testing my app!")
 
 
 
